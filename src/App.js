@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchPeople } from "./redux/peopleRedux";
+import Footer from "./components/views/Footer/Footer";
+import Header from './components/views/Header/Header'
+import { Route, Routes } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import CharacterList from "./components/pages/CharactersList/CharactersList";
+import Contact from "./components/pages/Contact/Contact";
+import Favorite from "./components/pages/Favorite/Favorite";
+import NotFound from "./components/pages/NotFound/NotFound";
+import Character from "./components/pages/Character/Character";
+
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(fetchPeople()), [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <Routes>
+        <Route path="/" element={<CharacterList />} />
+        <Route path="/people/:id" element={<Character />} />
+        <Route path="/favorite" element={<Favorite />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </Container>
   );
 }
 
