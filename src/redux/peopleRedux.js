@@ -2,7 +2,7 @@
 //selectors
 export const getAllPeople = state => state.people;
 export const getPeopleByName = ({ people }, characterName) => people.find(character => character.name.replaceAll(' ', '') === characterName)
-
+export const getPeopleByUrl = ({ people }, url) => people.find(character => character.url === url)
 
 // actions
 const createActionName = actionName => `app/people/${actionName}`;

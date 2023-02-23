@@ -12,6 +12,7 @@ const Character = () => {
   const { id } = useParams();
   const character = useSelector(state => getPeopleByName(state, id))
 
+
   return (
     <Row>
       <h1>{character.name}</h1>
