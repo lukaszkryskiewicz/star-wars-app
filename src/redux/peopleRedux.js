@@ -1,11 +1,12 @@
 
 //selectors
 export const getAllPeople = state => state.people;
+export const getPeopleByName = ({ people }, characterName) => people.find(character => character.name.replaceAll(' ', '') === characterName)
 
 
 // actions
 const createActionName = actionName => `app/people/${actionName}`;
-const UPDATE_PEOPLE = createActionName('UPDATE_CHARACTERS')
+const UPDATE_PEOPLE = createActionName('UPDATE_PEOPLE')
 
 
 // action creators

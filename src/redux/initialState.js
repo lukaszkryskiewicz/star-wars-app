@@ -4,6 +4,18 @@ const initialState = {
 
   favorite: [
 
+  ],
+
+  planets: [
+
+  ],
+
+  films: [
+
+  ],
+
+  starships: [
+
   ]
 
 };

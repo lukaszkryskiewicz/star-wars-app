@@ -1,9 +1,9 @@
 import Characters from "../../features/Characters/Characters";
 
-const Character = () => {
+const CharacterList = () => {
   return (
     <Characters />
   )
 }
 
-export default Character;
+export default CharacterList;

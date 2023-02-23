@@ -28,7 +28,7 @@ const Characters = () => {
           </Col>
           <Col lg={4} className="text-end">
             <i className={clsx('fa mx-4', ((fav.includes(character)) ? 'fa-star' : 'fa-star-o'))} onClick={() => handleClick(character)}></i>
-            <Link to={"/people/" + character.name}><Button variant="primary">Show more</Button></Link>
+            <Link to={"/character/" + character.name.replaceAll(' ', '')}><Button variant="primary">Show more</Button></Link>
           </Col>
         </Row>
       )}

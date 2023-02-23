@@ -3,12 +3,18 @@ import initialState from './initialState';
 import thunk from 'redux-thunk';
 import peopleReducer from './peopleRedux';
 import favReducer from './favRedux';
+import planetsReducer from './planetsRedux';
+import filmsReducer from './filmsRedus';
+import starshipsReducer from './starshipsRedux';
 
 
 
 const subreducers = {
   people: peopleReducer,
   favorite: favReducer,
+  planets: planetsReducer,
+  films: filmsReducer,
+  starships: starshipsReducer,
 }
 
 const reducer = combineReducers(subreducers);

@@ -10,19 +10,25 @@ import Contact from "./components/pages/Contact/Contact";
 import Favorite from "./components/pages/Favorite/Favorite";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Character from "./components/pages/Character/Character";
+import { fetchPlanets } from "./redux/planetsRedux";
+import { fetchFilms } from "./redux/filmsRedus";
+import { fetchStarships } from "./redux/starshipsRedux";
 
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => dispatch(fetchPeople()), [dispatch]);
+  useEffect(() => dispatch(fetchPlanets()), [dispatch]);
+  useEffect(() => dispatch(fetchFilms()), [dispatch]);
+  useEffect(() => dispatch(fetchStarships()), [dispatch]);
 
   return (
     <Container>
       <Header />
       <Routes>
         <Route path="/" element={<CharacterList />} />
-        <Route path="/people/:id" element={<Character />} />
+        <Route path="/character/:id" element={<Character />} />
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
