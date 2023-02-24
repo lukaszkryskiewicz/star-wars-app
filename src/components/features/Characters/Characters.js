@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { getAllPeople } from "../../../redux/peopleRedux"
+import { getAllPeople, getFilteredPeople } from "../../../redux/peopleRedux"
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { addToFav, getAllFavorites, removeFav } from "../../../redux/favRedux";
 
 const Characters = () => {
-  const characters = useSelector(getAllPeople)
+  const characters = useSelector(getFilteredPeople)
   const fav = useSelector(getAllFavorites)
   const dispatch = useDispatch()
 

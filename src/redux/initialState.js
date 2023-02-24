@@ -16,7 +16,9 @@ const initialState = {
 
   starships: [
 
-  ]
+  ],
+
+  search: ''
 
 };
 

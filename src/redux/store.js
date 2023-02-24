@@ -6,6 +6,7 @@ import favReducer from './favRedux';
 import planetsReducer from './planetsRedux';
 import filmsReducer from './filmsRedus';
 import starshipsReducer from './starshipsRedux';
+import searchReducer from './searchRedux';
 
 
 
@@ -15,6 +16,7 @@ const subreducers = {
   planets: planetsReducer,
   films: filmsReducer,
   starships: starshipsReducer,
+  search: searchReducer,
 }
 
 const reducer = combineReducers(subreducers);

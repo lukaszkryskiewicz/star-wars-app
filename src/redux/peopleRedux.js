@@ -1,8 +1,11 @@
+import strContains from "../utils/strContains";
 
 //selectors
 export const getAllPeople = state => state.people;
 export const getPeopleByName = ({ people }, characterName) => people.find(character => character.name.replaceAll(' ', '') === characterName)
 export const getPeopleByUrl = ({ people }, url) => people.find(character => character.url === url)
+export const getFilteredPeople = ({ people, search }) => people.filter(character => strContains(character.name, search));
+
 
 // actions
 const createActionName = actionName => `app/people/${actionName}`;
