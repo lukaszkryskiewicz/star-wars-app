@@ -1,10 +1,8 @@
-import { Container } from "react-bootstrap";
+import ContactForm from "../../features/ContactForm/ContactForm";
 
 const Contact = () => {
   return (
-    <Container>
-
-    </Container>
+    <ContactForm />
   )
 }
 
