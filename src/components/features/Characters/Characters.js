@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { getAllPeople, getFilteredPeople } from "../../../redux/peopleRedux"
+import { getAllPeople, getFilteredPeopleByFilm, getFilteredPeopleByName } from "../../../redux/peopleRedux"
 import LoadingSpinner from "../../common/LoadingSpinner/LoadingSpinner";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -7,9 +7,10 @@ import clsx from "clsx";
 import { addToFav, getAllFavorites, removeFav } from "../../../redux/favRedux";
 
 const Characters = () => {
-  const characters = useSelector(getFilteredPeople)
+  const characters = useSelector(getFilteredPeopleByFilm)
   const fav = useSelector(getAllFavorites)
   const dispatch = useDispatch()
+
 
   const handleClick = (character) => {
     if (!fav.includes(character)) {

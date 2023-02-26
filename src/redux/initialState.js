@@ -18,7 +18,11 @@ const initialState = {
 
   ],
 
-  search: ''
+  filmFilter: [
+
+  ],
+
+  search: '',
 
 };
 

@@ -11,17 +11,24 @@ import Favorite from "./components/pages/Favorite/Favorite";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Character from "./components/pages/Character/Character";
 import { fetchPlanets } from "./redux/planetsRedux";
-import { fetchFilms } from "./redux/filmsRedus";
+import { fetchFilms } from "./redux/filmsRedux";
 import { fetchStarships } from "./redux/starshipsRedux";
+import { useState } from "react";
 
 
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(fetchPeople()), [dispatch]);
-  useEffect(() => dispatch(fetchPlanets()), [dispatch]);
+  const [peoplePage, setPeoplePage] = useState(1)
+  const [planetPage, setPlanetPage] = useState(1)
+  const [starchipsPage, setStarchipsPage] = useState(1)
+
+
+
+  useEffect(() => dispatch(fetchPeople(peoplePage, setPeoplePage)), [peoplePage, dispatch]);
+  useEffect(() => dispatch(fetchPlanets(planetPage, setPlanetPage)), [planetPage, dispatch]);
+  useEffect(() => dispatch(fetchStarships(starchipsPage, setStarchipsPage)), [starchipsPage, dispatch]);
   useEffect(() => dispatch(fetchFilms()), [dispatch]);
-  useEffect(() => dispatch(fetchStarships()), [dispatch]);
 
   return (
     <Container>

@@ -24,6 +24,8 @@ const Character = () => {
     } else dispatch(removeFav(character))
   }
 
+  console.log(character.films)
+
 
   return (
     <>

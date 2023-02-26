@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { getFilmByUrl } from "../../../redux/filmsRedus"
+import { getFilmByUrl } from "../../../redux/filmsRedux"
 
 const Film = ({ url }) => {
   const film = useSelector(state => getFilmByUrl(state, url))
